@@ -1,19 +1,29 @@
-def solution(s: str):
-    locl = {}
-    locr = {}
+def solution(s):
+    lt = []
+    d = {")": "(", "]": "[", "}": "{"}
+    for i in s:
+        if i in d.values():
+            lt.append(i)
+        elif i in d.keys():
+            if len(lt) < 1:
+                return False
 
-    for i,w in enumerate(s):
-        if w == "(":
-            locl[i] = "("
-        if w == ")":
-            locr[i] = ")"
-    if len(locl) != len(locr):
-        return False
-    if sorted(locl)[0] > sorted(locr)[0]:
-        return False
-    if sorted(locl)[-1] > sorted(locr)[-1]:
-        return False
-    return True
-print(solution("(NADI3D(OCMS), id=8)"))
-print(solution("(NADI3D(OCMS)), id=8)"))
-print(solution("(NADI(3D(OCMS), id=8)"))
+
+
+
+
+
+
+
+
+# input: (NADI[3D]{(OCMS), (id=8)})
+# output: True
+#
+# input: (NADI[3D{O]CMS, (id=8)})
+# output: False
+#
+# input: (NADI)[3D]{OCMS, (id=8)})
+# output: False
+#
+# input: (NADI[3D]{OCMS, (id=8)]})
+# output: False
