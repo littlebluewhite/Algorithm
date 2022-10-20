@@ -1,7 +1,9 @@
+def bar(s: str):
+    print(s)
+    if len(s) <= 1:
+        return
+    mid_index = len(s) // 2
+    bar(s[0: mid_index])
 
 
-l = [1, 2, 4, 3, 4, 5]
-l.reverse()
-l.remove(4)
-l.reverse()
-print(l)
+bar("abcdefghijklmnopqrstuvwxyz")
