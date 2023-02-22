@@ -46,10 +46,5 @@ tree = Node()
 for d in data:
     tree.insert(d)
 print(tree.search(88))
+print(tree.search(25))
 tree.inorder()
-tree = Node()
-value = [10, 5, 3, 65, 21, 88]
-for v in value:
-    tree.insert(v)
-
-print(tree.search(5))

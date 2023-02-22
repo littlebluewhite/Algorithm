@@ -24,4 +24,4 @@ def fib(n: int) -> int:
     return res
 
 
-print(fib(200))
+print(fib(100))
